@@ -19,16 +19,25 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Application definition
 
 INSTALLED_APPS = [
+    # 3RD-PARTY
+    "dal",
+    "dal_select2",
+    "dal_select2_taggit",
+    # DJANGO
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # 3RD PARTY
+    # 3RD-PARTY
+    "drf_yasg",
     "webpack_loader",
+    "rest_framework",
+    "django_filters",
     # IN-APPs
     "common.apps.CommonConfig",
+    "apps.weather.apps.WeatherConfig",
 ]
 
 MIDDLEWARE = [
@@ -118,3 +127,20 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "../../public/media")
 MEDIA_URL = "/media/"
+
+# SLUG CONFIGS
+DJANGO_SLUG_FUNCTION = "common.utils.utils.default_slugifier"
+DJANGO_SLUG_MAP = {}
+DJANGO_SLUG_BLACKLIST = []
+DJANGO_SLUG_ALLOW_UNICODE = False
+
+# DJANGO REST FRAMEWORK
+# DJANGO REST FRAMEWORK CONFIGS
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "common.rest_framework.paginator.CustomAPIPagination",
+    "PAGE_SIZE": 20,
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ],
+    "TEST_REQUEST_DEFAULT_FORMAT": "json",
+}

@@ -1,3 +1,36 @@
 // _custom.scss
 
 // Here You will place any Custom CSS you need
+body {
+  background-color: #DADADA !important;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.ui[class*="center aligned"].grid {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center !important;
+}
+
+.select2-container {
+  min-width: 50em !important;
+}
+
+/* django-addanother bootstrap css fix */
+.related-widget-wrapper {
+  padding-right: 16px;
+  position: relative;
+}
+
+.related-widget-wrapper-link {
+  position: absolute;
+  top: 3px;
+  right: 0px;
+}

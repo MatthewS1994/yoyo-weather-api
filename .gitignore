@@ -427,6 +427,7 @@ tags
 ### USER specific
 /public
 src/core/static/app
+src/apps/weather/management/fixtures/*
 app.ini
 webpack-stats*
 
@@ -434,3 +435,4 @@ webpack-stats*
 !/public/media/.gitkeep
 !/public/static/.gitkeep
 !src/core/static/app/.gitkeep
+!src/apps/weather/management/fixtures/.gitkeep

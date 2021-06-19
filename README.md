@@ -19,6 +19,14 @@
       - [Virtual environment](#virtual-environment)
       - [Pre-Commit installation](#pre-commit-installation-developer)
       - [Django Project Setup](#django-project-setup-developer)
+        - [Configurations](#configurations)
+        - [Migrations](#migrations)
+        - [Django Admin User](#admin-superuser-optional)
+        - [Import City List](#import-city-list)
+        - [Runserver](#runserver)
+        - [Frontend](#frontend-developer)
+    - [Tests](#tests)
+    - [Linting](#linting)
 
 
 # Installation
@@ -108,6 +116,16 @@ python src/manage.py createsuperuser
 
 ```
 
+###### Import City List
+
+[Read more about Cities](./docs/django-project.md#city-import)
+
+```bash
+
+python src/manage.py import_cities # optional [--remove]
+
+```
+
 ###### Runserver
 
 ```bash
@@ -132,5 +150,31 @@ yarn
 ```bash
 
 yarn run watch
+
+```
+
+# Tests
+
+```bash
+
+pipenv install --dev
+
+coverage run --source='.' src/manage.py test apps.weather --settings=core.settings.tests
+
+// Run the coverage report
+
+coverage report
+coverage html  # open htmlcov/index.html in a browser
+
+```
+
+# Linting
+
+```bash
+// Python
+flake8 --radon-max-cc 34 --radon-no-assert
+
+// Frontend
+npm run lint --silent
 
 ```

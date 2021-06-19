@@ -6,40 +6,40 @@
 ├── Pipfile
 ├── Pipfile.lock
 ├── README.md
-├── <span style="color:blue">config</span>
+├── <font style="color:blue">config</font>
 │   ├── app.example.ini
 │   └── app.ini
-├── <span style="color:blue">docs</span>
+├── <font style="color:blue">docs</font>
 │   ├── django-project.md
 │   ├── help.md
-│   └── <span style="color:blue">screenshots</span>
+│   └── <font style="color:blue">screenshots</font>
 │       ├── pre-commit-example.png
 │       └── pre-commit-failed.png
-├── <span style="color:blue">public</span>
-│   ├── <span style="color:blue">media</span>
-│   └── <span style="color:blue">static</span>
+├── <font style="color:blue">public</font>
+│   ├── <font style="color:blue">media</font>
+│   └── <font style="color:blue">static</font>
 ├── pyproject.toml
 ├── setup.cfg
-└── <span style="color:blue">src</span>
-    ├── <span style="color:blue">core</span>
+└── <font style="color:blue">src</font>
+    ├── <font style="color:blue">core</font>
     │   ├── __init__.py
     │   ├── asgi.py
     │   ├── db.sqlite3
-    │   ├── <span style="color:blue">settings</span>
+    │   ├── <font style="color:blue">settings</font>
     │   │   ├── __init__.py
     │   │   ├── base.py
     │   │   ├── dev.py
     │   │   ├── production.py
     │   │   └── tests.py
-    │   ├── <span style="color:blue">static</span>
-    │   │   ├── <span style="color:blue">app</span>
-    │   │   └── <span style="color:blue">locale</span>
-    │   ├── <span style="color:blue">templates</span>
+    │   ├── <font style="color:blue">static</font>
+    │   │   ├── <font style="color:blue">app</font>
+    │   │   └── <font style="color:blue">locale</font>
+    │   ├── <font style="color:blue">templates</font>
     │   ├── urls.py
     │   └── wsgi.py
-    └── <span style="color:yellow">manage.py</span>
+    └── <font style="color:yellow">manage.py</font>
 
-<span style="color:blue">15 directories, 28 files</span>
+<font style="color:blue">15 directories, 28 files</font>
 
 ```
 
@@ -70,9 +70,50 @@ user = yoyo
 password = yoyo
 ```
 
+#### City Import
+
+The imported city data is used for searching purposes.
+i.e: A user is looking for the weather data for a specific city e.g. Cape Town or London.
+
+This data will allow better accuracy for finding a city. It will alleviate the user from getting
+NO data back from the weather API from problems as simple as a spelling mistake
+
+###### source
+> http://bulk.openweathermap.org/sample/
+
+###### Simply run the following command
+
+    $ python src/manage.py import_cities [--remove]
+
+
+###### Options / Args
+
+| Argument      | Description                                                           | Defaults  |
+|---------------|-----------------------------------------------------------------------|-----------|
+| --remove      | Option to DELETE the files before and after it has been imported      | True      |
+| --no-remove   | Option to KEEP the files from before and after it has been imported   | False     |
+
 
 #### Frontend
 
 ```html
+├── package.json
+├── <font style="color:blue">resources</font>
+│   ├── <font style="color:blue">images</font>
+│   │   └── Favicon.png
+│   ├── <font style="color:blue">js</font>
+│   │   ├── index.js
+│   │   └── vendor
+│   │       └── init.js
+│   └── <font style="color:blue">scss</font>
+│       ├── _custom.scss
+│       ├── _variables.scss
+│       └── app.scss
+│       └── app.scss
+└── <font style="color:blue">internals</font>
+    └── <font style="color:blue">webpack</font>
+        ├── webpack.base.config.js
+        ├── webpack.dev.config.js
+        └── webpack.production.config.js
 
 ```

@@ -56,3 +56,12 @@ LOGGING = {
         },
     },
 }
+
+# WEATHER API CONFIG
+WEATHER_API = parser.get("weather_api", "api")
+WEATHER_API_KEY = parser.get("weather_api", "key")
+WEATHER_API_CURRENT_ENDPOINT = parser.get("weather_api", "current_weather_endpoint")
+WEATHER_API_FORECAST_ENDPOINT = parser.get("weather_api", "forecast_weather_endpoint")
+WEATHER_API_DEFAULT_ENDPOINT = WEATHER_API_FORECAST_ENDPOINT
+WEATHER_API_MIN_FORECAST_DAYS = parser.getint("weather_api", "min_days")
+WEATHER_API_MAX_FORECAST_DAYS = parser.getint("weather_api", "max_days")
