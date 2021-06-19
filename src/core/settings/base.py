@@ -25,6 +25,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # 3RD PARTY
+    "webpack_loader",
+    # IN-APPs
+    "common.apps.CommonConfig",
 ]
 
 MIDDLEWARE = [

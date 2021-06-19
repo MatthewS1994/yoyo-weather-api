@@ -115,3 +115,22 @@ python src/manage.py createsuperuser
 python src/manage.py runserver 0.0.0.0:8000
 
 ```
+
+###### Frontend (DEVELOPER)
+
+> Install packages
+```bash
+
+# nvm use 12.16.1
+
+yarn
+
+```
+
+> Run watch (hot reload dev server)
+
+```bash
+
+yarn run watch
+
+```

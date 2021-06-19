@@ -40,6 +40,16 @@ ALLOWED_HOSTS = parser.get("app", "hosts").split(",")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = parser.get("app", "secret")
 
+# HAYSTACK CONFIGS
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "CACHE": not DEBUG,
+        "STATS_FILE": os.path.join(BASE_DIR, CONFIG_DIR, "webpack-stats-production.json"),
+        "POLL_INTERVAL": 0.1,
+        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
+    },
+}
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,

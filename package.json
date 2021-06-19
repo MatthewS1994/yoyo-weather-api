@@ -1,0 +1,106 @@
+{
+  "name": "yoyo-weather-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "yoyo-weather-api Frontend module",
+  "repository": "git@github.com:MatthewS1994/yoyo-weather-api.git",
+  "author": "Matthew Stuart <matthew.stuart@double-eye.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.16.0"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config ./internals/webpack/webpack.production.config.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "watch": "cross-env NODE_ENV=development webpack-dev-server --hot --config ./internals/webpack/webpack.dev.config.js --port 3000",
+    "lint": "npm run eslint && npm run scss-lint",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix --ignore-pattern internals/",
+    "lint:staged": "lint-staged",
+    "eslint": "eslint ./resources/**/*.js",
+    "scss-lint": "stylelint 'resources/**/*.scss'",
+    "pretest": "npm run test:clean && npm run lint"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
+  "pre-commit": [
+    "lint:staged",
+    "eslint",
+    "scss-lint"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
+  },
+  "dependencies": {
+    "@lgaitan/pace-progress": "^1.0.7",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0-beta3",
+    "cross-env": "5.2.0",
+    "flag-icon-css": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "jquery.cookie": "^1.4.1",
+    "semantic-ui-css": "^2.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-lodash": "3.3.4",
+    "circular-dependency-plugin": "5.0.2",
+    "compression-webpack-plugin": "2.0.0",
+    "css-loader": "^3.5.3",
+    "eslint": "5.7.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-import-resolver-webpack": "0.10.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "file-loader": "^6.0.0",
+    "gifsicle": "^5.1.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "image-webpack-loader": "^6.0.0",
+    "lint-staged": "7.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "offline-plugin": "5.0.5",
+    "pngquant-bin": "^6.0.0",
+    "prettier": "1.14.3",
+    "sass": "1.32.13",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^2.0.0",
+    "stylelint": "9.6.0",
+    "stylelint-config-recommended": "2.1.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.5.0",
+    "stylelint-scss": "^3.19.0",
+    "svg-url-loader": "^3.0.1",
+    "terser-webpack-plugin": "4.2.3",
+    "url-loader": "2.1.0",
+    "webpack": "^4.43.0",
+    "webpack-bundle-tracker": "~0.4.2-beta",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-pwa-manifest": "3.7.1"
+  }
+}

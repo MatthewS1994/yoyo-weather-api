@@ -1,0 +1,11 @@
+// app.scss
+/* You can add global styles to this file, and also import other style files */
+// If you want to override variables do it here
+@import "variables";
+@import "custom";
+@import '~flag-icon-css/sass/flag-icon';
+@import '~font-awesome/scss/font-awesome';
+// SEMANTIC UI STYLESHEET: https://semantic-ui.com/introduction/getting-started.html
+@import '~semantic-ui-css/semantic.min.css';
+// BOOTSTRAP STYLESHEET: https://getbootstrap.com/docs/5.0/customize/sass/
+@import '~bootstrap/scss/bootstrap';

@@ -428,6 +428,7 @@ tags
 /public
 src/core/static/app
 app.ini
+webpack-stats*
 
 ### GIT keep
 !/public/media/.gitkeep

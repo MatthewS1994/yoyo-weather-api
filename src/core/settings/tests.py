@@ -31,6 +31,16 @@ ALLOWED_HOSTS = ["*"]
 
 INTERNAL_IPS = ALLOWED_HOSTS
 
+# HAYSTACK CONFIGS
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "CACHE": not DEBUG,
+        "STATS_FILE": os.path.join(BASE_DIR, CONFIG_DIR, "webpack-stats.json"),
+        "POLL_INTERVAL": 0.1,
+        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
+    },
+}
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,

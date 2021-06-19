@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+django-webpack-loader = "==0.7.0"
 psycopg2-binary = "*"
 
 [dev-packages]

@@ -1,0 +1,47 @@
+{% load i18n %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <title>{{ request.site.name }} {% block title %}{% endblock %}</title>
+    {% block meta %}{% endblock %}
+    <link rel="icon" href="{% static 'Favicon.png'%}" />
+
+    <!-- stylesheets -->
+    {% render_bundle 'vendors~main' 'css' 'DEFAULT' %}
+    {% render_bundle 'main' 'css' 'DEFAULT' %}
+    {% block stylesheet %}{% endblock %}
+
+    <!-- extra -->
+    {% block extra %}{% endblock %}
+</head>
+<body>
+
+  {% block content_wrapper %}
+
+    <div class="animated fadeIn">
+      {% include 'partials/notifications/alert_messages.html' %}
+      <!-- content -->
+      {% block content %}{% endblock %}
+    </div>
+  {% endblock %}
+
+{% render_bundle 'vendors~main' 'js' 'DEFAULT' %}
+{% render_bundle 'main' 'js' 'DEFAULT' %}
+{% block javascript %}{% endblock %}
+<script>
+  $(function () {
+    {% block onbodyload %}{% endblock %}
+  });
+</script>
+</body>
+</html>
