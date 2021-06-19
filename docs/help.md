@@ -101,7 +101,8 @@ git commit -m "My commit message"
 # At this point the git-hook is executed and will look as follows
 
 ```
-FAILED:
-[]
-PASSED:
-[]
+###### FAILED:
+![alt text](./screenshots/pre-commit-failed.png)
+
+###### PASSED:
+![alt text](./screenshots/pre-commit-example.png)
