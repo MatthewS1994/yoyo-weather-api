@@ -1,5 +1,5 @@
 [flake8]
-exclude = .tox,.git,venv
+exclude = .tox,.git,venv,src/core/settings/
 ignore =
     E203
     E402

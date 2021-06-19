@@ -422,12 +422,14 @@ tags
 # Persistent undo
 [._]*.un~
 
-### USER specific
 ## HERE YOU WILL PLACE CUSTOM FILES/FOLDERS FRO GIT TO IGNORE ;)
 
-### GIT keep
-
-
 ### USER specific
+/public
+src/core/static/app
+app.ini
 
-
+### GIT keep
+!/public/media/.gitkeep
+!/public/static/.gitkeep
+!src/core/static/app/.gitkeep

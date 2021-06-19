@@ -17,7 +17,8 @@
 - [Installation](#setup)
     - [Setup](#setup)
       - [Virtual environment](#virtual-environment)
-      - [Pre-Commit installation:](#pre-commit-installation-developer)
+      - [Pre-Commit installation](#pre-commit-installation-developer)
+      - [Django Project Setup](#django-project-setup-developer)
 
 
 # Installation
@@ -60,5 +61,57 @@ see more about [pre-commit](https://pre-commit.com/)
 pipenv install --dev
 
 pre-commit install
+
+```
+
+#### Django Project Setup (DEVELOPER)
+[see requirements](#Requirements)
+- Virtualenv
+- Virtualenvwrapper *(OPTIONAL)*
+- Pipenv
+
+[See Project Structure](./docs/django-project.md#project-structure)
+
+###### Configurations
+
+> Copy the `app.example.ini` file to app.ini
+
+```bash
+
+cp ./config/app.example.ini ./config/app.ini
+
+```
+
+> Open the `./config/app.ini` file and update the settings
+
+see [DEFAULTS](./docs/django-project.md#default-appini-configurations)
+```bash
+
+vim ./config/app.ini
+
+```
+
+###### Migrations
+
+```bash
+
+python src/manage.py makemigrations
+python src/manage.py migrate
+
+```
+
+###### Admin Superuser (OPTIONAL)
+
+```bash
+
+python src/manage.py createsuperuser
+
+```
+
+###### Runserver
+
+```bash
+
+python src/manage.py runserver 0.0.0.0:8000
 
 ```
