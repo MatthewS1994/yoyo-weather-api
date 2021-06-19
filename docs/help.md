@@ -37,6 +37,8 @@ pre-commit has been set up to ensure the following standards:
     - check-toml
     - check-merge-conflict
 
+##### Pre-Commit Install
+
 after running `pre-commit install` you should end up with something like the following:
 
 ```bash
@@ -88,3 +90,18 @@ else:
 
 
 ```
+
+##### Pre-Commit usage
+
+your commits to git would contain the following during the general git-workflow:
+
+```bash
+git add .
+git commit -m "My commit message"
+# At this point the git-hook is executed and will look as follows
+
+```
+FAILED:
+[]
+PASSED:
+[]
