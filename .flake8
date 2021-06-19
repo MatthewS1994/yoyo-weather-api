@@ -1,0 +1,10 @@
+[flake8]
+exclude = .tox,.git,venv
+ignore =
+    E203
+    E402
+    E501
+    E722
+    W503
+max-line-length = 120
+import-order-style = google
